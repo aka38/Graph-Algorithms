@@ -28,12 +28,12 @@ void dijikstra(int v)
     fill(mark,mark+n+1,false);
     d[v]=0;
     int u;
-    priority_queue<   pair<int,int>  , vector < pair<int,int> >  , greater<pair<int,int> > > pq;
-    pq.push(MP(d[v],v));
+    priority_queue<   pair<int,int>  , vector < pair<int,int> >  , greater<pair<int,int> > > pq; // smallest d[i] at top
+    pq.push(MP(d[v],v));    // distance from v and the vertex v;
     while(!pq.empty())
     {
-         u=pq.top().second;
-         cout<<"u:"<<u<<endl;
+         u=pq.top().second;  // the top vertex i.e the vertex with minimum value of d[vertex] present in pq;
+       
         pq.pop();
         if(mark[u])
         continue;
